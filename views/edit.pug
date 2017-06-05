@@ -1,0 +1,13 @@
+extends base.pug
+
+block content
+  h1 New puppy time!
+  form(action=`/puppies/${puppy.id}?_method=PATCH`,  method="POST")
+    label(for="name") Name
+    input(type="text", name="puppy[name]", id="name", value=puppy.name)
+    label(for="breed") Breed
+    input(type="text", name="puppy[breed]", id="breed", value=puppy.breed)
+    input(type="submit", value="Make!")
+
+  form(action=`/puppies/${puppy.id}?_method=DELETE`, method="POST")
+    input(type="submit", value="X")

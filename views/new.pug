@@ -1,0 +1,10 @@
+extends base.pug
+
+block content
+  h1 New puppy time!
+  form(action="/puppies" method="POST")
+    label(for="name") Name
+    input(type="text", name="puppy[name]", id="name")
+    label(for="breed") Breed
+    input(type="text", name="puppy[breed]", id="breed")
+    input(type="submit", value="Make!")
